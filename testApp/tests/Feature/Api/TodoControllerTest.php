@@ -37,4 +37,16 @@ class TodoControllerTest extends TestCase
         $this->assertEquals($params['content'], $todo->content);
 
     }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'content' => ['required', 'string', 'max:255']
+        ]);
+
+        $this->todo->fill($validated)->save();
+
+        return redirect()->route('todo.index');
+    }
 }
