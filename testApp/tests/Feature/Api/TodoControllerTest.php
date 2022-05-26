@@ -18,7 +18,27 @@ class TodoControllerTest extends TestCase
     /**
      * @test
      */
-    public function Todoの新規作成()
+    // public function Todoの新規作成()
+    // {
+    //     $params = [
+    //         'title' => 'テスト:タイトル',
+    //         'content' => 'テスト:内容'
+    //     ];
+
+    //     $res = $this->postJson(route('api.todo.create'), $params);
+    //     $res->assertOk();
+    //     $todos = Todo::all();
+
+    //     $this->assertCount(1, $todos);
+
+    //     $todo = $todos->first();
+
+    //     $this->assertEquals($params['title'], $todo->title);
+    //     $this->assertEquals($params['content'], $todo->content);
+
+    // }
+
+    public function Todoの更新処理()
     {
         $params = [
             'title' => 'テスト:タイトル',
@@ -36,17 +56,5 @@ class TodoControllerTest extends TestCase
         $this->assertEquals($params['title'], $todo->title);
         $this->assertEquals($params['content'], $todo->content);
 
-    }
-
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string', 'max:255']
-        ]);
-
-        $this->todo->fill($validated)->save();
-
-        return redirect()->route('todo.index');
     }
 }
