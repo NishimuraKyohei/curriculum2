@@ -18,65 +18,65 @@ class TodoControllerTest extends TestCase
     /**
      * @test
      */
-    // public function Todoの新規作成()
-    // {
-    //     $params = [
-    //         'title' => 'テスト:タイトル',
-    //         'content' => 'テスト:内容'
-    //     ];
+    public function Todoの新規作成()
+    {
+        $params = [
+            'title' => 'テスト:タイトル',
+            'content' => 'テスト:内容'
+        ];
 
-    //     $res = $this->postJson(route('api.todo.create'), $params);
-    //     $res->assertOk();
-    //     $todos = Todo::all();
+        $res = $this->postJson(route('api.todo.create'), $params);
+        $res->assertOk();
+        $todos = Todo::all();
 
-    //     $this->assertCount(1, $todos);
+        $this->assertCount(1, $todos);
 
-    //     $todo = $todos->first();
+        $todo = $todos->first();
 
-    //     $this->assertEquals($params['title'], $todo->title);
-    //     $this->assertEquals($params['content'], $todo->content);
+        $this->assertEquals($params['title'], $todo->title);
+        $this->assertEquals($params['content'], $todo->content);
 
-    // }
+    }
 
-    // public function Todoの更新処理()
-    // {
-    //     $params = [
-    //         'title' => 'テスト:タイトル',
-    //         'content' => 'テスト:内容'
-    //     ];
+    public function Todoの更新処理()
+    {
+        $params = [
+            'title' => 'テスト:タイトル',
+            'content' => 'テスト:内容'
+        ];
 
-    //     $res = $this->postJson(route('api.todo.create'), $params);
-    //     $res->assertOk();
-    //     $todos = Todo::all();
+        $res = $this->postJson(route('api.todo.update'), $params);
+        $res->assertOk();
+        $todos = Todo::all();
 
-    //     $this->assertCount(1, $todos);
+        $this->assertCount(1, $todos);
 
-    //     $todo = $todos->first();
+        $todo = $todos->first();
 
-    //     $this->assertEquals($params['title'], $todo->title);
-    //     $this->assertEquals($params['content'], $todo->content);
+        $this->assertEquals($params['title'], $todo->title);
+        $this->assertEquals($params['content'], $todo->content);
 
-    // }
+    }
 
-    // public function Todoの詳細取得()
-    // {
-    //     $params = [
-    //         'title' => 'テスト:タイトル',
-    //         'content' => 'テスト:内容'
-    //     ];
+    public function Todoの詳細取得()
+    {
+        $params = [
+            'title' => 'テスト:タイトル',
+            'content' => 'テスト:内容'
+        ];
 
-    //     $res = $this->postJson(route('api.todo.create'), $params);
-    //     $res->assertOk();
-    //     $todos = Todo::all();
+        $res = $this->postJson(route('api.todo.edit'), $params);
+        $res->assertOk();
+        $todos = Todo::all();
 
-    //     $this->assertCount(1, $todos);
+        $this->assertCount(1, $todos);
 
-    //     $todo = $todos->first();
+        $todo = $todos->first();
 
-    //     $this->assertEquals($params['title'], $todo->title);
-    //     $this->assertEquals($params['content'], $todo->content);
+        $this->assertEquals($params['title'], $todo->title);
+        $this->assertEquals($params['content'], $todo->content);
 
-    // }
+    }
 
     public function Todoの削除処理()
     {
@@ -85,7 +85,7 @@ class TodoControllerTest extends TestCase
             'content' => 'テスト:内容'
         ];
 
-        $res = $this->postJson(route('api.todo.create'), $params);
+        $res = $this->postJson(route('api.todo.destroy'), $params);
         $res->assertOk();
         $todos = Todo::all();
 
