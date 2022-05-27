@@ -22,30 +22,30 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string', 'max:255']
-        ]);
-        $this->todo->fill($validated)->save();
+    // public function store(Request $request)
+    // {
+    //     $validated = $request->validate([
+    //         'title' => ['required', 'string', 'max:255'],
+    //         'content' => ['required', 'string', 'max:255']
+    //     ]);
+    //     $this->todo->fill($validated)->save();
 
-        return ['message' => 'ok'];
-    }
+    //     return ['message' => 'ok'];
+    // }
 
-    public function update(Request $request, int $id)
-    {
-        $validated = $request->validate([
-            'title' => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string', 'max:255']
-        ]);
-        $this->todo->findOrFail($id)->update($validated);
-        return ['message' => 'ok'];
-    }
+    // public function update(Request $request, int $id)
+    // {
+    //     $validated = $request->validate([
+    //         'title' => ['required', 'string', 'max:255'],
+    //         'content' => ['required', 'string', 'max:255']
+    //     ]);
+    //     $this->todo->findOrFail($id)->update($validated);
+    //     return ['message' => 'ok'];
+    // }
 
-    public function edit(int $id)
-    {
-        $todo = $this->todo->findOrFail($id);
-        return ['message' => 'ok'];
-    }
+    // public function edit(int $id)
+    // {
+    //     $todo = $this->todo->findOrFail($id);
+    //     return ['message' => 'ok'];
+    // }
 }
